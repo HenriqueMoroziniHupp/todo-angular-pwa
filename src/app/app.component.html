@@ -1,11 +1,62 @@
-<h1> {{ title }} </h1>
+<div class="app">
 
-<ul>
-  <li *ngFor="let todo of todos"> 
-    {{ todo.id }} - {{ todo.title }}
-    <button> Concluir </button>
-    <button> Delete </button>
-  </li>
-</ul>
+  <h1 class="title"> {{ title }} </h1>
 
-<button (click)="alterarTexto()">Bota</button>
+  <div class="container">
+    <!-- [] é para fazer referencia a uma variável, bind do TS -> html -->
+    <!-- () é para chamar evento, bind do html -> TS -->
+    <!-- <div > -->
+    <form class="form card" [formGroup]="form">
+      <!-- <fieldset> -->
+      <!-- <label>Tarefa: </label> -->
+      <div>
+        <input class="newTodo" type="text" placeholder="Criar nova tarefa..." maxlength="56" formControlName="title">
+        <br>
+        <small class="form-info" *ngIf="form.controls['title'].invalid && !form.controls['title'].pristine">Deve conter
+          entre 3 e 56
+          caracteres</small>
+      </div>
+      <button [disabled]="form.invalid" (click)="add()">
+        <!-- <img src="https://img.icons8.com/ios/50/ffffff/add--v1.png"/> -->
+        <!-- <img class="add" src="https://img.icons8.com/ios/50/ffffff/plus-math.png"/> -->
+        <img class="btn-add" src="../assets/icon-cross.svg" alt="adicionar">
+      </button>
+      <!-- </fieldset> -->
+    </form>
+
+
+    <!-- </div> -->
+
+
+    <!-- <div class="list"> -->
+    <!-- <ul> -->
+
+    <div class="card">
+      <li *ngFor="let todo of todos">
+        <div class="items">
+          <button class="btn-checked" *ngIf="!todo.done" (click)="markAsDone(todo)">
+          </button>
+          
+          <button class="btn-checked" *ngIf="todo.done" (click)="markAsUndone(todo)">
+            <img class="icon-checked" src="../assets/icon-check.svg" alt="">
+          </button>
+
+          <p>{{ todo.title }}</p>
+          <button class="btn-destroy" (click)="remove(todo)">
+            <!-- <img src="https://img.icons8.com/ios/50/fa314a/delete-sign--v1.png"/> -->
+            <img  src="../assets/icon-cross.svg" alt="Excluir tarefa">
+          </button>
+        </div>
+        <hr>
+
+      </li>
+      <small class="todo-info" *ngIf="finished()!=0">{{ finished() }} Itens restantes</small>
+      <!-- <small class="items " *ngIf="todos.length!=0">{{ todos.length + 1}} Itens restantes</small> -->
+      <small class="todo-info" *ngIf="finished()==0">Não há tarefas !</small>
+    </div>
+    <!-- </ul> -->
+    <!-- </div> -->
+
+  </div>
+
+</div>

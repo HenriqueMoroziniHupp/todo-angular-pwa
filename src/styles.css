@@ -1,1 +1,156 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+:root {
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --light-grayish-blue: hsl(234, 39%, 85%);
+  --light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);
+  --very-dark-grayish-blue: hsl(233, 14%, 35%);
+  /* --very-dark-grayish-blue: hsl(237, 14%, 26%); */
+  --padding: 0.8rem;
+}
+
+/* ----------------- */
+
+button {
+  cursor: pointer;
+  /* background-color: #2d6cea; */
+  background-color: transparent;
+  /* color: #e1e8ef; */
+  border: none;
+  border-radius: 2rem;
+  /* padding: 0.6rem 1.5rem; */
+  /* width: max-content; */
+  /* transition: all 0.3s linear; */
+  /* outline: none; */
+  /* box-shadow: 0 0 5px 3px rgba(45, 108, 234, 0.3); */
+  /* float: right; */
+  justify-self: center;
+  align-self: center;
+}
+
+button:hover {
+  /* background-color: #1b5cdc; */
+}
+
+.btn-add {
+  transform: rotate(45deg);
+}
+
+.btn-destroy {
+  /* align-self: end; */
+}
+
+.btn-checked {
+  height: 1.5rem;
+  width: 1.5rem;
+  border: solid 1px var(--dark-grayish-blue);
+}
+
+.icon-checked {
+  width: 1.2rem;
+}
+
+.add {
+  width: 2rem;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-radius: 1rem;
+  padding: var(--padding);
+  outline: none;
+  color: #e1e8ef;
+}
+
+input::placeholder {
+  color: #999fc6;
+}
+
+/* ----------------- */
+body {
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Josefin Sans", sans-serif;
+  background-color: var(--very-dark-blue);
+  color: var(--light-grayish-blue);
+  margin: 1rem;
+}
+
+small {
+  color: var(--dark-grayish-blue);
+}
+
+hr {
+  width: 100%;
+  border-color: var(--dark-grayish-blue);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+.container {
+  display: grid;
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--very-dark-desaturated-blue);
+  border-radius: 0.4rem;
+  display: grid;
+  box-shadow: 0px 8px 20px 0px rgb(0 0 0 / 50%);
+}
+
+.title {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: var(--light-grayish-blue-hover);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: minmax(375px, 500px);
+}
+
+.form {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: var(--padding);
+}
+
+.form-info {
+  padding: 1rem;
+}
+
+/* .list {
+  display: grid;
+  gap: 1rem;
+} */
+
+.items {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 2rem auto max-content;
+  /* grid-template-rows: auto; */
+  align-items: center;
+  padding: var(--padding);
+  gap: 1rem;
+}
+
+.todo-info {
+  padding: var(--padding);
+}
