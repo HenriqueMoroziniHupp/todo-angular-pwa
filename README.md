@@ -1,6 +1,12 @@
 # Todo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+Progressive Web Apps browser support
+
+## Link:
+
+https://papaya-pony-310eea.netlify.app/
+
 
 ## Development server
 
