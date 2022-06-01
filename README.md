@@ -6,7 +6,7 @@ Progressive Web Apps support
 
 ## Link:
 
-https://papaya-pony-310eea.netlify.app/
+https://todo-app-pwa-henrique-mhdev.netlify.app/
 
 
 ## Development server
